@@ -9,6 +9,8 @@ if (!TrackJS.isInstalled()) {
   });
 }
 
+throw new Error("fuck");
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
