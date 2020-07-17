@@ -10,6 +10,8 @@
   "dependencies": {
     "next": "^9.3.3",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "trackjs": "^3.7.4",
+    "trackjs-node": "0.0.11"
   }
 }
