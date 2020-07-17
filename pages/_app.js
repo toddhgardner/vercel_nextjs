@@ -5,11 +5,10 @@ import { TrackJS } from "../utils/trackjs-isomorphic.js";
 
 if (!TrackJS.isInstalled()) {
   TrackJS.install({
-    token: "fake"
+    token: "fake",
+    usageURL: "http://localhost:3000/api/timeout"
   });
 }
-
-throw new Error("fuck");
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
