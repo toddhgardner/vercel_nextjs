@@ -4,7 +4,7 @@ import { TrackJS } from "../utils/trackjs-isomorphic.js";
 if (!TrackJS.isInstalled()) {
   TrackJS.install({
     token: "fake",
-    usageURL: "http://localhost:3000/api/timeout"
+    usageURL: "https://nextjs-tau-azure.vercel.app/api/timeout"
   });
 }
 
