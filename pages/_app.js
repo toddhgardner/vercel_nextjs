@@ -1,6 +1,4 @@
-import React from "react";
 import App from "next/app";
-// trackjsAdapter is the Isomorphic Adapter this may be run on the browser or server.
 import { TrackJS } from "../utils/trackjs-isomorphic.js";
 
 if (!TrackJS.isInstalled()) {
@@ -10,25 +8,15 @@ if (!TrackJS.isInstalled()) {
   });
 }
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
-  }
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
 
-  // Standard React extension point for capturing errors.
-  componentDidCatch (error, errorInfo) {
-    TrackJS.track(error);
-    this.setState({ error });
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />
-  }
+// Standard React extension point for capturing errors.
+MyApp.componentDidCatch = (error, errorInfo) => {
+  TrackJS.track(error);
+  this.setState({ error });
+  // Anything else you want to do with the error.
 }
 
 export default MyApp;
