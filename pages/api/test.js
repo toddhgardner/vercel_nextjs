@@ -9,7 +9,7 @@ if (!TrackJS.isInstalled()) {
 
 export default (req, res) => {
 
-  // TrackJS.usage();
+  TrackJS.usage();
   res.status(200).json({ text: "fuckyou" });
 
 }
