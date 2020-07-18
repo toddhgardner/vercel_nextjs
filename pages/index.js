@@ -202,7 +202,8 @@ const Home = () => (
 
 export default Home
 
-export async function getServerSideProps() {
+
+export async function getStaticProps() {
   var res = await fetch("https://nextjs-tau-azure.vercel.app/api/test")
   var val = await res.json();
   return {
