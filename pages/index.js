@@ -201,3 +201,13 @@ const Home = () => (
 )
 
 export default Home
+
+export async function getServerSideProps() {
+  var res = await fetch("http://localhost:3000/api/test")
+  var val = await res.json();
+  return {
+    props: {
+      value: val
+    }
+  };
+}
